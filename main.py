@@ -495,7 +495,7 @@ def main():
 
                         case "FPS":
                             settings_json["FPS"] += mouse_scroll
-                            settings_json["FPS"] = clamp(settings_json["FPS"], 12, 999)
+                            settings_json["FPS"] = clamp(settings_json["FPS"], 6, 1000)
 
                     if not mouse_just_pressed:
                         continue
@@ -989,7 +989,7 @@ def main():
         division_timer_s -= clock.tick(settings_json["FPS"])/1000.0
 
         if division_timer_s <= 0:
-            print("timeout")
+            print("timeout!")
             division_timer_s = 1.0
             if len(division_path) > 0:
                 r, g, b = division_path.pop(0)
